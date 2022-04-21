@@ -4,21 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Linear Regression | Practical Machine Learning</title>
+<title>Image Classification with Vision Transformers | Practical Machine Learning</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Linear Regression" />
-<meta name="author" content="Shohjahon Nishonov" />
+<meta property="og:title" content="Image Classification with Vision Transformers" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="All you need to know about linear regression" />
-<meta property="og:description" content="All you need to know about linear regression" />
-<link rel="canonical" href="https://sh-nishonov.github.io/shnishonov/linear-regression/" />
-<meta property="og:url" content="https://sh-nishonov.github.io/shnishonov/linear-regression/" />
+<meta name="description" content="Practical stuff about Machine Learning and Deep Learning" />
+<meta property="og:description" content="Practical stuff about Machine Learning and Deep Learning" />
+<link rel="canonical" href="https://sh-nishonov.github.io/shnishonov/2022/04/21/Vision-Transformer.html" />
+<meta property="og:url" content="https://sh-nishonov.github.io/shnishonov/2022/04/21/Vision-Transformer.html" />
 <meta property="og:site_name" content="Practical Machine Learning" />
-<meta property="og:image" content="https://sh-nishonov.github.io/images/linear_regression.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-01-02T00:00:00-06:00" />
+<meta property="article:published_time" content="2022-04-21T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"All you need to know about linear regression","url":"https://sh-nishonov.github.io/shnishonov/linear-regression/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://sh-nishonov.github.io/shnishonov/linear-regression/"},"headline":"Linear Regression","dateModified":"2022-01-02T00:00:00-06:00","datePublished":"2022-01-02T00:00:00-06:00","author":{"@type":"Person","name":"Shohjahon Nishonov"},"image":"https://sh-nishonov.github.io/images/linear_regression.png","@context":"https://schema.org"}</script>
+{"description":"Practical stuff about Machine Learning and Deep Learning","url":"https://sh-nishonov.github.io/shnishonov/2022/04/21/Vision-Transformer.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://sh-nishonov.github.io/shnishonov/2022/04/21/Vision-Transformer.html"},"headline":"Image Classification with Vision Transformers","dateModified":"2022-04-21T00:00:00-05:00","datePublished":"2022-04-21T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/shnishonov/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://sh-nishonov.github.io/shnishonov/feed.xml" title="Practical Machine Learning" /><link rel="shortcut icon" type="image/x-icon" href="/shnishonov/images/logo_mine.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,11 +71,9 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Linear Regression</h1><p class="page-description">All you need to know about linear regression</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-01-02T00:00:00-06:00" itemprop="datePublished">
-        Jan 2, 2022
-      </time>• 
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">Shohjahon Nishonov</span></span>
+    <h1 class="post-title p-name" itemprop="name headline">Image Classification with Vision Transformers</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-04-21T00:00:00-05:00" itemprop="datePublished">
+        Apr 21, 2022
+      </time>
        • <span class="read-time" title="Estimated read time">
     
     
@@ -86,20 +82,13 @@ window.onload = wrap_img;
 </span></p>
 
     
-      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
-      
-        <a class="category-tags-link" href="/shnishonov/categories/#machine learning">machine learning</a>
-        
-      
-      </p>
-    
 
     
       
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/sh-nishonov/shnishonov/tree/master/_notebooks/2022-01-02-Linear-Regression.ipynb" role="button" target="_blank">
+    <a href="https://github.com/sh-nishonov/shnishonov/tree/master/_notebooks/2022-04-21-Vision-Transformer.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/shnishonov/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
@@ -110,54 +99,34 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#Multiple-Linear-Regression">Multiple Linear Regression </a></li>
-<li class="toc-entry toc-h1"><a href="#Estimating-the-regression-coefficients">Estimating the regression coefficients </a></li>
-</ul><!--
+    <!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2022-01-02-Linear-Regression.ipynb
+# file to edit: _notebooks/2022-04-21-Vision-Transformer.ipynb
 -->
 
 <div class="container" id="notebook-container">
         
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Multiple-Linear-Regression">
-<a class="anchor" href="#Multiple-Linear-Regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multiple Linear Regression<a class="anchor-link" href="#Multiple-Linear-Regression"> </a>
-</h1>
+<ul>
+<li>toc: true</li>
+<li>branch: master</li>
+<li>comments: true</li>
+<li>author: Shohjahon Nishonov</li>
+<li>categories: [Deep Learning, Computer Vision, Transformers]</li>
+<li>image: ../images/vit.jpeg</li>
+<li>permalink: /vit/</li>
+<li>hide: true</li>
+</ul>
+
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Multiple Linear Regression takes the form:
-
-$$Y = \beta_0 + \beta_1X_1+\beta_2X_2 + \cdots\ + \beta_pX_p + \epsilon$$
-</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Estimating-the-regression-coefficients">
-<a class="anchor" href="#Estimating-the-regression-coefficients" aria-hidden="true"><span class="octicon octicon-link"></span></a>Estimating the regression coefficients<a class="anchor-link" href="#Estimating-the-regression-coefficients"> </a>
-</h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In order to find $\beta_0, \beta_1,...,\beta_p$ we need to minimize the sum of squared residuals
-
-$$RSS = \sum_{i=1}^n (y_i-\hat{y_i})^2$$
-</p>
+<p>It is a fact that Convolutional Neural Networks(CNN) have been dominant in Copmuter Vision tasks. However, <a href="https://arxiv.org/abs/2010.11929">ViT - AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE</a> paper showed great results compared to SOTA models. Here, we will dive deep enough to understand the Transformers architecure and apply the model to some practical tasks.</p>
 
 </div>
 </div>
@@ -166,15 +135,7 @@ $$RSS = \sum_{i=1}^n (y_i-\hat{y_i})^2$$
 
 
 
-  </div><!-- from https://github.com/utterance/utterances -->
-<script src="https://utteranc.es/client.js"
-        repo="sh-nishonov/shnishonov"
-        issue-term="title"
-        label="blogpost-comment"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script><a class="u-url" href="/shnishonov/linear-regression/" hidden></a>
+  </div><a class="u-url" href="/shnishonov/2022/04/21/Vision-Transformer.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
