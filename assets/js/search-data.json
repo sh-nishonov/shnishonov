@@ -3,9 +3,9 @@
     
         "post0": {
             "title": "Image Classification with Vision Transformers",
-            "content": "toc: true | branch: master | comments: true | author: Shohjahon Nishonov | categories: [Deep Learning, Computer Vision, Transformers] | image: ../images/vit.jpeg | hide: false | . It is a fact that Convolutional Neural Networks(CNN) have been dominant in Copmuter Vision tasks. However, ViT - AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE paper showed great results compared to SOTA models. Here, we will dive deep enough to understand the Transformers architecure and apply the model to some practical tasks. .",
-            "url": "https://sh-nishonov.github.io/shnishonov/2022/04/21/Vision-Transformer.html",
-            "relUrl": "/2022/04/21/Vision-Transformer.html",
+            "content": "It is a fact that Convolutional Neural Networks(CNN) have been dominant in Copmuter Vision tasks. However, ViT - AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE paper showed great results compared to SOTA models. Here, we will dive deep enough to understand the Transformers architecure and apply the model to some practical tasks. .",
+            "url": "https://sh-nishonov.github.io/shnishonov/deep%20learning/computer%20vision/transformers/2022/04/21/Vision-Transformer.html",
+            "relUrl": "/deep%20learning/computer%20vision/transformers/2022/04/21/Vision-Transformer.html",
             "date": " • Apr 21, 2022"
         }
         
