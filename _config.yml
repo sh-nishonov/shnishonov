@@ -123,3 +123,7 @@ feed:
   
 exclude:
   - settings.ini
+  
+bibtex_bibfiles:
+  - references.bib
+
